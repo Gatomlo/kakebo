@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movement{% endblock %}
+
+{% block body %}
+    <h1>Movement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ movement.id }}</td>
+            </tr>
+            <tr>
+                <th>Object</th>
+                <td>{{ movement.Object }}</td>
+            </tr>
+            <tr>
+                <th>Value</th>
+                <td>{{ movement.Value }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ movement.Date ? movement.Date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Credit</th>
+                <td>{{ movement.Credit ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Reccurent</th>
+                <td>{{ movement.Reccurent ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Recurrence</th>
+                <td>{{ movement.Recurrence }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ movement.Comment }}</td>
+            </tr>
+            <tr>
+                <th>Valued</th>
+                <td>{{ movement.Valued ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Method</th>
+                <td>{{ movement.Method }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_movement_index') }}">back to list</a>
+
+    <a href="{{ path('app_movement_edit', {'id': movement.id}) }}">edit</a>
+
+    {{ include('movement/_delete_form.html.twig') }}
+{% endblock %}
