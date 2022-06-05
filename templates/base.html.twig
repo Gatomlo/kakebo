@@ -52,12 +52,32 @@
           </div>
           <!--navigation-->
           <ul class="metismenu" id="menu">
-
             <li>
-              <a href="widgets.html">
-                <div class="parent-icon"><i class='bx bx-cookie'></i>
+              <a href="{{ path('home') }}">
+                <div class="parent-icon"><i class='bx bx-home'></i>
                 </div>
-                <div class="menu-title">Widgets</div>
+                <div class="menu-title">Accueil</div>
+              </a>
+            </li>
+            <li>
+              <a href="{{ path('app_movement_index') }}">
+                <div class="parent-icon"><i class='bx bx-transfer'></i>
+                </div>
+                <div class="menu-title">Mouvements</div>
+              </a>
+            </li>
+            <li>
+              <a href="{{ path('app_account_index') }}">
+                <div class="parent-icon"><i class='bx bx-wallet'></i>
+                </div>
+                <div class="menu-title">Comptes</div>
+              </a>
+            </li>
+            <li>
+              <a href="{{ path('app_category_index') }}">
+                <div class="parent-icon"><i class='bx bx-category'></i>
+                </div>
+                <div class="menu-title">Catégories</div>
               </a>
             </li>
           </ul>
@@ -414,8 +434,11 @@
           </div>
         </header>
         <!--end header -->
+        <div class="page-wrapper">
+    			<div class="page-content">
         {% block body %}{% endblock %}
-
+          </div>
+        </div>
         <!-- Bootstrap JS -->
       	<script src="{{asset('template/js/bootstrap.bundle.min.js')}}"></script>
       	<!--plugins-->
